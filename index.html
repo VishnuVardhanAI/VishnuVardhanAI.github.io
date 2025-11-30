@@ -44,7 +44,7 @@
 
     /* -------- Hero -------- */
     .hero {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-title {
@@ -63,25 +63,48 @@
     .hero-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
+      gap: 0.55rem;
+      margin-bottom: 0.7rem;
     }
 
+    /* -------- Buttons / Chips -------- */
     .chip-link {
       display: inline-flex;
       align-items: center;
-      padding: 0.35rem 0.75rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 999px;
-      border: 1px solid #d4d4d8;
+      border: 1px solid #cfd2d7;
+      background: #ffffff;
       font-size: 0.85rem;
       color: #111827;
-      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
 
     .chip-link:hover {
       border-color: #2563eb;
       color: #2563eb;
       text-decoration: none;
+    }
+
+    /* Resume button */
+    .resume-button {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+
+    .resume-button:hover {
+      background: #1e4ecc;
+      border-color: #1e4ecc;
+      color: white;
+    }
+
+    /* Email text */
+    .email-text {
+      margin-top: 0.5rem;
+      color: #4b5563;
+      font-size: 0.9rem;
     }
 
     /* -------- Sections -------- */
@@ -139,10 +162,14 @@
 
     .project-title a {
       color: #111827;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.15s ease;
     }
 
     .project-title a:hover {
       color: #2563eb;
+      border-bottom: 1px solid #2563eb;
       text-decoration: none;
     }
 
@@ -155,6 +182,7 @@
     .project p {
       font-size: 0.93rem;
       color: #111827;
+      margin: 0;
     }
 
     /* -------- Tech Pills -------- */
@@ -171,6 +199,7 @@
       border: 1px solid #e5e7eb;
       font-size: 0.85rem;
       color: #374151;
+      transition: border-color 0.15s ease;
     }
 
     .pill:hover {
@@ -186,14 +215,15 @@
       <div class="hero-subtitle">
         Go · Docker · Distributed Systems · Microservices · PostgreSQL
       </div>
+
       <div class="hero-links">
         <a class="chip-link" href="https://github.com/VishnuVardhanAI">GitHub</a>
-        <a
-          class="chip-link"
-          href="https://www.linkedin.com/in/vishnu-vardhan-manivannan"
-          >LinkedIn</a
-        >
-        <a class="chip-link" href="mailto:ai.vishnuvardhan97@gmail.com">Email</a>
+        <a class="chip-link" href="https://www.linkedin.com/in/vishnu-vardhan-manivannan">LinkedIn</a>
+        <a class="chip-link resume-button" href="resume.pdf" download>Resume (PDF)</a>
+      </div>
+
+      <div class="email-text">
+        ai.vishnuvardhan97@gmail.com
       </div>
     </header>
 
@@ -295,4 +325,3 @@
   </main>
 </body>
 </html>
-    
