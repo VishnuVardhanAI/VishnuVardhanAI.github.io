@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vishnu Vardhan · Software Engineer</title>
+  <title>Vishnu Vardhan Manivannan· Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Optional: book-ish serif for headings -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    /* -------- Base -------- */
+    /* ---------- Base ---------- */
     * {
       box-sizing: border-box;
     }
@@ -13,15 +18,15 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
-      background: #f5f5f7;
-      color: #111827;
+      background: #f4eee8; /* warm paper */
+      color: #1f2933;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: #2563eb;
+      color: #2c5282;
       text-decoration: none;
     }
 
@@ -29,120 +34,156 @@
       text-decoration: underline;
     }
 
-    /* -------- Layout -------- */
     .page {
-      max-width: 960px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem 4rem;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 960px) {
       .page {
-        padding-top: 3.5rem;
+        padding-top: 3.2rem;
       }
     }
 
-    /* -------- Hero -------- */
-    .hero {
-      margin-bottom: 2rem;
+    /* ---------- Hero with Library Image ---------- */
+    .hero-wrapper {
+      border-radius: 26px;
+      overflow: hidden;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 26px 60px rgba(15, 23, 42, 0.35);
+      border: 1px solid rgba(55, 65, 81, 0.4);
+    }
+
+    .hero-bg {
+      position: relative;
+      background-image: url("library.jpg");
+      background-size: cover;
+      background-position: center;
+      min-height: 210px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.2),
+        rgba(15, 23, 42, 0.75)
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      padding: 1.6rem 1.7rem 1.7rem;
+      color: #f9fafb;
     }
 
     .hero-title {
-      font-size: 2.4rem;
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 2.3rem;
       font-weight: 700;
-      letter-spacing: -0.03em;
-      margin: 0 0 0.4rem;
+      letter-spacing: 0.01em;
+      margin: 0 0 0.25rem;
     }
 
     .hero-subtitle {
       font-size: 0.95rem;
-      color: #6b7280;
-      margin-bottom: 1rem;
+      color: #e5e7eb;
+      margin-bottom: 0.8rem;
     }
 
     .hero-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-top: 0.5rem;
+      margin-top: 0.2rem;
     }
 
     .chip-link {
       display: inline-flex;
       align-items: center;
-      padding: 0.35rem 0.75rem;
+      padding: 0.32rem 0.8rem;
       border-radius: 999px;
-      border: 1px solid #d4d4d8;
       font-size: 0.85rem;
-      color: #111827;
-      background: #ffffff;
+      color: #f9fafb;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(209, 213, 219, 0.7);
+      backdrop-filter: blur(6px);
     }
 
     .chip-link:hover {
-      border-color: #2563eb;
-      color: #2563eb;
+      background: rgba(15, 23, 42, 0.9);
       text-decoration: none;
     }
 
-    /* -------- Sections -------- */
+    /* ---------- Sections (cards) ---------- */
     .section {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 1.5rem 1.6rem;
-      margin-bottom: 1.3rem;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.04);
+      background: #fdfaf5; /* softer paper */
+      border-radius: 20px;
+      padding: 1.5rem 1.7rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #e0d7c8;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
     }
 
     .section-title {
-      font-size: 0.95rem;
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 1.05rem;
       font-weight: 600;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #6b7280;
-      margin: 0 0 0.9rem;
+      color: #8b5e34;
+      margin: 0 0 0.8rem;
     }
 
     .section p {
       margin: 0;
-      line-height: 1.6;
-      font-size: 0.95rem;
-      color: #111827;
+      line-height: 1.7;
+      font-size: 0.96rem;
+      color: #1f2933;
     }
 
-    /* -------- Work Experience -------- */
+    /* ---------- Work Experience ---------- */
     .experience-role {
-      font-weight: 600;
-      margin-bottom: 0.1rem;
-    }
-
-    .experience-meta {
-      font-size: 0.86rem;
-      color: #6b7280;
-      margin-bottom: 0.7rem;
-    }
-
-    /* -------- Projects -------- */
-    .project {
-      margin-bottom: 1.1rem;
-    }
-
-    .project:last-child {
-      margin-bottom: 0;
-    }
-
-    .project-title {
       font-weight: 600;
       margin-bottom: 0.1rem;
       font-size: 0.98rem;
     }
 
+    .experience-meta {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ---------- Projects ---------- */
+    .project {
+      margin-bottom: 1.05rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dashed rgba(156, 163, 175, 0.5);
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+      font-size: 0.98rem;
+    }
+
     .project-title a {
-      color: #111827;
+      color: #1f2933;
     }
 
     .project-title a:hover {
-      color: #2563eb;
+      color: #2b6cb0;
       text-decoration: none;
     }
 
@@ -154,10 +195,10 @@
 
     .project p {
       font-size: 0.93rem;
-      color: #111827;
+      margin: 0;
     }
 
-    /* -------- Tech Pills -------- */
+    /* ---------- Tech Pills ---------- */
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -167,33 +208,46 @@
     .pill {
       padding: 0.3rem 0.7rem;
       border-radius: 999px;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      font-size: 0.85rem;
-      color: #374151;
+      background: #f2e7d8;
+      border: 1px solid #e0d7c8;
+      font-size: 0.84rem;
+      color: #4b3b30;
     }
 
     .pill:hover {
-      border-color: #c4c4d0;
+      background: #e8dccb;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      margin-top: 1.6rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <!-- Hero -->
-    <header class="hero">
-      <h1 class="hero-title">Vishnu Vardhan</h1>
-      <div class="hero-subtitle">
-        Go · Docker · Distributed Systems · Microservices · PostgreSQL
-      </div>
-      <div class="hero-links">
-        <a class="chip-link" href="https://github.com/VishnuVardhanAI">GitHub</a>
-        <a
-          class="chip-link"
-          href="https://www.linkedin.com/in/vishnu-vardhan-manivannan"
-          >LinkedIn</a
-        >
-        <a class="chip-link" href="mailto:ai.vishnuvardhan97@gmail.com">Email</a>
+    <!-- Hero with library image -->
+    <header class="hero-wrapper">
+      <div class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">Vishnu Vardhan</h1>
+          <div class="hero-subtitle">
+            Go · Docker · Distributed Systems · Microservices · PostgreSQL
+          </div>
+          <div class="hero-links">
+            <a class="chip-link" href="https://github.com/VishnuVardhanAI">GitHub</a>
+            <a
+              class="chip-link"
+              href="https://www.linkedin.com/in/Yvishnu-vardhan-manivannan"
+              >LinkedIn</a
+            >
+            <a class="chip-link" href="mailto:ai.vishnuvardhan97@gmail.com">Email</a>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -239,7 +293,9 @@
             GoDrive – Cloud Storage Backend
           </a>
         </div>
-        <div class="project-meta">Go · gRPC · NATS · MinIO · PostgreSQL · Docker</div>
+        <div class="project-meta">
+          Go · gRPC · NATS · MinIO · PostgreSQL · Docker
+        </div>
         <p>
           A Go-based cloud storage backend with support for user authentication,
           direct-to-storage uploads, file metadata management, event-driven background
