@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     /* -------- Base -------- */
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -25,10 +23,6 @@
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
     /* -------- Layout -------- */
     .page {
       max-width: 960px;
@@ -37,15 +31,11 @@
     }
 
     @media (min-width: 900px) {
-      .page {
-        padding-top: 3.5rem;
-      }
+      .page { padding-top: 3.5rem; }
     }
 
     /* -------- Hero -------- */
-    .hero {
-      margin-bottom: 1.5rem;
-    }
+    .hero { margin-bottom: 1.5rem; }
 
     .hero-title {
       font-size: 2.4rem;
@@ -65,6 +55,12 @@
       flex-wrap: wrap;
       gap: 0.55rem;
       margin-bottom: 0.7rem;
+    }
+
+    .icon {
+      width: 15px;
+      height: 15px;
+      margin-right: 6px;
     }
 
     /* -------- Buttons / Chips -------- */
@@ -93,18 +89,20 @@
       color: white;
       border-color: #2563eb;
     }
-
     .resume-button:hover {
       background: #1e4ecc;
       border-color: #1e4ecc;
       color: white;
     }
 
-    /* Email text */
-    .email-text {
-      margin-top: 0.5rem;
+    /* Email pill */
+    .email-pill {
+      padding: 0.4rem 0.8rem;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      font-size: 0.85rem;
       color: #4b5563;
-      font-size: 0.9rem;
     }
 
     /* -------- Sections -------- */
@@ -150,9 +148,7 @@
       margin-bottom: 1.1rem;
     }
 
-    .project:last-child {
-      margin-bottom: 0;
-    }
+    .project:last-child { margin-bottom: 0; }
 
     .project-title {
       font-weight: 600;
@@ -160,17 +156,15 @@
       font-size: 0.98rem;
     }
 
+    /* Make links look like links by default */
     .project-title a {
-      color: #111827;
+      color: #2563eb;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: all 0.15s ease;
+      font-weight: 600;
     }
 
     .project-title a:hover {
-      color: #2563eb;
-      border-bottom: 1px solid #2563eb;
-      text-decoration: none;
+      color: #1e4ecc;
     }
 
     .project-meta {
@@ -181,7 +175,6 @@
 
     .project p {
       font-size: 0.93rem;
-      color: #111827;
       margin: 0;
     }
 
@@ -202,13 +195,13 @@
       transition: border-color 0.15s ease;
     }
 
-    .pill:hover {
-      border-color: #c4c4d0;
-    }
+    .pill:hover { border-color: #c4c4d0; }
   </style>
 </head>
+
 <body>
   <main class="page">
+
     <!-- Hero -->
     <header class="hero">
       <h1 class="hero-title">Vishnu Vardhan Manivannan</h1>
@@ -217,13 +210,39 @@
       </div>
 
       <div class="hero-links">
-        <a class="chip-link" href="https://github.com/VishnuVardhanAI">GitHub</a>
-        <a class="chip-link" href="https://www.linkedin.com/in/vishnu-vardhan-manivannan">LinkedIn</a>
-        <a class="chip-link resume-button" href="resume.pdf" download>Resume (PDF)</a>
-      </div>
 
-      <div class="email-text">
-        E-mail: ai.vishnuvardhan97@gmail.com
+        <!-- GitHub -->
+        <a class="chip-link" href="https://github.com/VishnuVardhanAI">
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+            -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+            -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 
+            2.2.82a7.65 7.65 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 
+            1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 
+            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+          GitHub
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="chip-link" href="https://www.linkedin.com/in/vishnu-vardhan-manivannan">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.4 
+            8.62H4.6V24H.4V8.62zM8.34 8.62H12.4v2.09h.06c.57-1.08 1.98-2.22 4.07-2.22 4.35 0 
+            5.15 2.86 5.15 6.58V24h-4.2v-7.97c0-1.9-.03-4.34-2.64-4.34-2.65 0-3.06 2.07-3.06 
+            4.2V24H8.34V8.62z"></path>
+          </svg>
+          LinkedIn
+        </a>
+
+        <!-- Resume -->
+        <a class="chip-link resume-button" href="resume.pdf" download>
+          Resume (PDF)
+        </a>
+
+        <!-- Email pill -->
+        <div class="email-pill">ai.vishnuvardhan97@gmail.com</div>
       </div>
     </header>
 
@@ -322,6 +341,7 @@
         <span class="pill">Python</span>
       </div>
     </section>
+
   </main>
 </body>
 </html>
