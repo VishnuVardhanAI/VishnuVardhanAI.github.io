@@ -16,7 +16,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", sans-serif;
       background: #f5f5f7;
-      color: #111827;
+      color: #0f172a;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -31,76 +31,83 @@
 
     /* -------- Layout -------- */
     .page {
-      max-width: 960px;
+      max-width: 1024px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem 4rem;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 960px) {
       .page {
         padding-top: 3.5rem;
       }
     }
 
     /* -------- Hero -------- */
-    .hero {
-      margin-bottom: 2rem;
+    .hero-card {
+      border-radius: 24px;
+      padding: 1.8rem 1.9rem 1.9rem;
+      margin-bottom: 1.6rem;
+      background: radial-gradient(circle at top left, #4b5563, #020617 55%);
+      color: #e5e7eb;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     .hero-title {
       font-size: 2.4rem;
       font-weight: 700;
       letter-spacing: -0.03em;
-      margin: 0 0 0.4rem;
+      margin: 0 0 0.3rem;
     }
 
     .hero-subtitle {
-      font-size: 0.95rem;
-      color: #6b7280;
-      margin-bottom: 1rem;
+      font-size: 0.98rem;
+      color: #cbd5f5;
+      margin-bottom: 1.1rem;
     }
 
     .hero-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
+      gap: 0.55rem;
+      margin-top: 0.3rem;
     }
 
     .chip-link {
       display: inline-flex;
       align-items: center;
-      padding: 0.35rem 0.75rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 999px;
-      border: 1px solid #d4d4d8;
+      border: 1px solid rgba(148, 163, 184, 0.6);
       font-size: 0.85rem;
-      color: #111827;
-      background: #ffffff;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
     }
 
     .chip-link:hover {
-      border-color: #2563eb;
-      color: #2563eb;
+      border-color: #38bdf8;
+      color: #f9fafb;
       text-decoration: none;
     }
 
     /* -------- Sections -------- */
     .section {
       background: #ffffff;
-      border-radius: 18px;
-      padding: 1.5rem 1.6rem;
+      border-radius: 20px;
+      padding: 1.5rem 1.7rem;
       margin-bottom: 1.3rem;
       border: 1px solid #e5e7eb;
       box-shadow: 0 18px 45px rgba(15, 23, 42, 0.04);
     }
 
     .section-title {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.14em;
       color: #6b7280;
-      margin: 0 0 0.9rem;
+      margin: 0 0 0.85rem;
     }
 
     .section p {
@@ -114,6 +121,7 @@
     .experience-role {
       font-weight: 600;
       margin-bottom: 0.1rem;
+      font-size: 0.98rem;
     }
 
     .experience-meta {
@@ -123,12 +131,24 @@
     }
 
     /* -------- Projects -------- */
-    .project {
-      margin-bottom: 1.1rem;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
-    .project:last-child {
-      margin-bottom: 0;
+    @media (min-width: 850px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .project {
+      border-radius: 16px;
+      padding: 0.9rem 1rem;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03);
     }
 
     .project-title {
@@ -155,6 +175,7 @@
     .project p {
       font-size: 0.93rem;
       color: #111827;
+      margin: 0;
     }
 
     /* -------- Tech Pills -------- */
@@ -176,12 +197,20 @@
     .pill:hover {
       border-color: #c4c4d0;
     }
+
+    /* -------- Footer -------- */
+    .footer {
+      margin-top: 1.8rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <main class="page">
     <!-- Hero -->
-    <header class="hero">
+    <header class="hero-card">
       <h1 class="hero-title">Vishnu Vardhan</h1>
       <div class="hero-subtitle">
         Go · Docker · Distributed Systems · Microservices · PostgreSQL
@@ -233,47 +262,54 @@
     <section class="section">
       <h2 class="section-title">Highlighted Projects</h2>
 
-      <div class="project">
-        <div class="project-title">
-          <a href="https://github.com/VishnuVardhanAI/godrive">
-            GoDrive – Cloud Storage Backend
-          </a>
+      <div class="projects-grid">
+        <div class="project">
+          <div class="project-title">
+            <a href="https://github.com/VishnuVardhanAI/godrive">
+              GoDrive – Cloud Storage Backend
+            </a>
+          </div>
+          <div class="project-meta">
+            Go · gRPC · NATS · MinIO · PostgreSQL · Docker
+          </div>
+          <p>
+            A Go-based cloud storage backend with support for user authentication,
+            direct-to-storage uploads, file metadata management, event-driven background
+            processing, and automatic cleanup of deleted files.
+          </p>
         </div>
-        <div class="project-meta">Go · gRPC · NATS · MinIO · PostgreSQL · Docker</div>
-        <p>
-          A Go-based cloud storage backend with support for user authentication,
-          direct-to-storage uploads, file metadata management, event-driven background
-          processing, and automatic cleanup of deleted files.
-        </p>
-      </div>
 
-      <div class="project">
-        <div class="project-title">
-          <a href="https://github.com/VishnuVardhanAI/Wikipedia-Web-Traffic-Forecasting">
-            Wikipedia Web Traffic Forecasting
-          </a>
+        <div class="project">
+          <div class="project-title">
+            <a href="https://github.com/VishnuVardhanAI/Wikipedia-Web-Traffic-Forecasting">
+              Wikipedia Web Traffic Forecasting
+            </a>
+          </div>
+          <div class="project-meta">Python · ARIMA · LSTM · Time Series</div>
+          <p>
+            Forecasting Wikipedia traffic with a hybrid SARIMA–LSTM ensemble, with
+            large-scale preprocessing and evaluation using RMSE/SMAPE for smarter
+            capacity planning.
+          </p>
         </div>
-        <div class="project-meta">Python · ARIMA · LSTM · Time Series</div>
-        <p>
-          Forecasting Wikipedia traffic with a hybrid SARIMA–LSTM ensemble, with
-          large-scale preprocessing and evaluation using RMSE/SMAPE for smarter
-          capacity planning.
-        </p>
-      </div>
 
-      <div class="project">
-        <div class="project-title">
-          <a
-            href="https://github.com/VishnuVardhanAI/E-Commerce-Website--Olist.com--Customer-Segmentation"
-          >
-            E-commerce Customer Segmentation (Olist)
-          </a>
+        <div class="project">
+          <div class="project-title">
+            <a
+              href="https://github.com/VishnuVardhanAI/E-Commerce-Website--Olist.com--Customer-Segmentation"
+            >
+              E-commerce Website (Olist.com) Customer Segmentation
+            </a>
+          </div>
+          <div class="project-meta">Python · Clustering · Customer Analytics</div>
+          <p>
+            Customer segmentation for an e-commerce platform using behavioral features,
+            cohort-style metrics, and clustering to identify high-value segments.
+          </p>
         </div>
-        <div class="project-meta">Python · Clustering · Customer Analytics</div>
-        <p>
-          Customer segmentation for an e-commerce platform using behavioral features,
-          cohort-style metrics, and clustering to identify high-value segments.
-        </p>
+
+        <!-- Empty spacer on large screens so grid looks balanced when odd count -->
+        <div class="project" aria-hidden="true" style="visibility:hidden;"></div>
       </div>
     </section>
 
