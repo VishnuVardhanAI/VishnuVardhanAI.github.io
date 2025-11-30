@@ -2,129 +2,274 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Vishnu Vardhan · Software Engineer</title>
+  <title>Vishnu Vardhan · Backend Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    /* -------- Base -------- */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #050816;
-      color: #e5e7eb;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: #f5f5f7;
+      color: #111827;
+      -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 900px;
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* -------- Layout -------- */
+    .page {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 1.5rem 1.5rem 3rem; /* reduced top padding */
+      padding: 2.5rem 1.5rem 4rem;
     }
-    h1 {
-      margin-bottom: 0.3rem;
+
+    @media (min-width: 900px) {
+      .page {
+        padding-top: 3.5rem;
+      }
     }
-    h2 {
-      margin-top: 2.5rem;
-      margin-bottom: 0.7rem;
-      font-size: 1.3rem;
+
+    /* -------- Hero -------- */
+    .hero {
+      margin-bottom: 2rem;
     }
-    header {
-      margin-bottom: 1.2rem; /* reduced spacing under header */
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.4rem;
     }
-    .subtitle { color: #9ca3af; margin-bottom: 1.5rem; }
-    .pill {
-      display: inline-block;
-      padding: 0.25rem 0.6rem;
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
       border-radius: 999px;
-      background: #111827;
-      font-size: 0.8rem;
-      margin-right: 0.35rem;
-      margin-bottom: 0.35rem;
-      border: 1px solid #1f2933;
+      border: 1px solid #d4d4d8;
+      font-size: 0.85rem;
+      color: #111827;
+      background: #ffffff;
     }
-    a { color: #38bdf8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    .chip-link:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    /* -------- Sections -------- */
     .section {
-      background: #020617;
-      border-radius: 0.75rem;
-      padding: 1.2rem 1.3rem; /* reduced padding */
-      border: 1px solid #1f2937;
-      margin-bottom: 1rem; /* tightened spacing between sections */
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.5rem 1.6rem;
+      margin-bottom: 1.3rem;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.04);
     }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+      margin: 0 0 0.9rem;
+    }
+
+    .section p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #111827;
+    }
+
+    /* -------- Work Experience -------- */
+    .experience-role {
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .experience-meta {
+      font-size: 0.86rem;
+      color: #6b7280;
+      margin-bottom: 0.7rem;
+    }
+
+    /* -------- Projects -------- */
+    .project {
+      margin-bottom: 1.1rem;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
     .project-title {
       font-weight: 600;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.1rem;
+      font-size: 0.98rem;
     }
-    .meta {
-      font-size: 0.82rem;
-      color: #9ca3af;
-      margin-bottom: 0.4rem;
+
+    .project-title a {
+      color: #111827;
+    }
+
+    .project-title a:hover {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-bottom: 0.25rem;
+    }
+
+    .project p {
+      font-size: 0.93rem;
+      color: #111827;
+    }
+
+    /* -------- Tech Pills -------- */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      font-size: 0.85rem;
+      color: #374151;
+    }
+
+    .pill:hover {
+      border-color: #c4c4d0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Vishnu Vardhan</h1>
-      <div class="subtitle">Go · Docker · Distributed Systems · Microservices · PostgreSQL</div>
-      <div>
-        <a href="https://github.com/VishnuVardhanAI">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/vishnu-vardhan-manivannan">LinkedIn</a> ·
-        <a href="mailto:ai.vishnuvardhan97@gmail.com">e-mail</a>
+  <main class="page">
+    <!-- Hero -->
+    <header class="hero">
+      <h1 class="hero-title">Vishnu Vardhan</h1>
+      <div class="hero-subtitle">
+        Backend Engineer · Go · Docker · Distributed Systems · Microservices · PostgreSQL
+      </div>
+      <div class="hero-links">
+        <a class="chip-link" href="https://github.com/VishnuVardhanAI">GitHub</a>
+        <a
+          class="chip-link"
+          href="https://www.linkedin.com/in/YOUR-LINKEDIN-SLUG"
+          >LinkedIn</a
+        >
+        <a class="chip-link" href="mailto:ai.vishnuvardhan97@gmail.com">Email</a>
       </div>
     </header>
 
+    <!-- About -->
     <section class="section">
-      <h2>About</h2>
+      <h2 class="section-title">About</h2>
       <p>
-        I’m a Software Engineer focused on backend development, distributed systems, and cloud-native architecture. I work with technologies such as Go, gRPC, PostgreSQL, NATS, Redis, Docker, and modern observability tools to build reliable and maintainable backend services.
+        I’m a Software Engineer focused on backend development, distributed systems, and
+        cloud-native architecture. I work with technologies such as Go, gRPC, PostgreSQL,
+        NATS, Redis, Docker, and observability tooling to build reliable and maintainable
+        backend services.
       </p>
     </section>
+
+    <!-- Work Experience -->
     <section class="section">
-      <h2>Work Experience</h2>
-    
-      <div style="margin-bottom: 1rem;">
-        <div class="project-title">Software Development Engineer · HipBar (India)</div>
-        <div class="meta">Jun 2019 – Dec 2021</div>
+      <h2 class="section-title">Work Experience</h2>
+      <div class="experience">
+        <div class="experience-role">
+          Software Development Engineer · HipBar (India)
+        </div>
+        <div class="experience-meta">Jun 2019 – Dec 2021</div>
         <p>
-          Built and owned core backend services at a fast-paced e-commerce startup, including leading the
-          development of a new promotion engine that reduced operational costs by 72%. Migrated major
-          Python-based microservices to Go, improved authentication performance with Redis caching,
-          and implemented distributed worker systems using NATS and RabbitMQ for event processing.
-          Strengthened system reliability and maintainability through clean API design, unit testing,
-          and better observability with Jaeger, OpenTracing, and Sentry. Collaborated with DevOps to
-          ship production-ready Docker images and deployments.
+          Built and owned core backend services at a fast-paced e-commerce startup,
+          including leading the development of a new promotion engine that reduced
+          operational costs by 72%. Migrated major Python-based microservices to Go,
+          improved authentication performance with Redis caching, and implemented
+          distributed worker systems using NATS and RabbitMQ for event processing.
+          Strengthened system reliability through clean API design, unit testing,
+          better observability with Jaeger/OpenTracing/Sentry, and collaboration with
+          DevOps to ship production-ready Docker images and deployments.
         </p>
       </div>
     </section>
-    <section class="section">
-      <h2>Highlighted Projects</h2>
 
-      <div style="margin-bottom: 1rem;">
+    <!-- Projects -->
+    <section class="section">
+      <h2 class="section-title">Highlighted Projects</h2>
+
+      <div class="project">
         <div class="project-title">
-          <a href="https://github.com/VishnuVardhanAI/godrive">GoDrive – Cloud Storage Backend</a>
+          <a href="https://github.com/VishnuVardhanAI/godrive">
+            GoDrive – Cloud Storage Backend
+          </a>
         </div>
-        <div class="meta">Go · gRPC · NATS · MinIO · PostgreSQL · Docker</div>
+        <div class="project-meta">Go · gRPC · NATS · MinIO · PostgreSQL · Docker</div>
         <p>
-          A Go-based cloud storage backend with support for user authentication, direct-to-storage uploads, file metadata management, event-driven background processing, and automatic cleanup of deleted files.
+          A Go-based cloud storage backend with support for user authentication,
+          direct-to-storage uploads, file metadata management, event-driven background
+          processing, and automatic cleanup of deleted files.
         </p>
       </div>
 
-      <div style="margin-bottom: 1rem;">
+      <div class="project">
         <div class="project-title">
           <a href="https://github.com/VishnuVardhanAI/Wikipedia-Web-Traffic-Forecasting">
             Wikipedia Web Traffic Forecasting
           </a>
         </div>
-        <div class="meta">Python · ARIMA · LSTM · Time Series</div>
+        <div class="project-meta">Python · ARIMA · LSTM · Time Series</div>
         <p>
-          Forecasting Wikipedia traffic with a hybrid SARIMA–LSTM approach for smarter capacity planning.
+          Forecasting Wikipedia traffic with a hybrid SARIMA–LSTM ensemble, with
+          large-scale preprocessing and evaluation using RMSE/SMAPE for smarter
+          capacity planning.
         </p>
       </div>
 
-      <div>
+      <div class="project">
         <div class="project-title">
-          <a href="https://github.com/VishnuVardhanAI/E-Commerce-Website--Olist.com--Customer-Segmentation">
-            E-commerce Website (Olist.com) Customer Segmentation 
+          <a
+            href="https://github.com/VishnuVardhanAI/E-Commerce-Website--Olist.com--Customer-Segmentation"
+          >
+            E-commerce Customer Segmentation (Olist)
           </a>
         </div>
-        <div class="meta">Python · Clustering · Customer Analytics</div>
+        <div class="project-meta">Python · Clustering · Customer Analytics</div>
         <p>
           Customer segmentation for an e-commerce platform using behavioral features,
           cohort-style metrics, and clustering to identify high-value segments.
@@ -132,9 +277,10 @@
       </div>
     </section>
 
+    <!-- Tech -->
     <section class="section">
-      <h2>Tech</h2>
-      <div>
+      <h2 class="section-title">Tech</h2>
+      <div class="pill-row">
         <span class="pill">Go</span>
         <span class="pill">gRPC</span>
         <span class="pill">NATS</span>
@@ -144,8 +290,9 @@
         <span class="pill">Docker</span>
         <span class="pill">Redis</span>
         <span class="pill">Python</span>
+        <span class="pill">Time Series</span>
       </div>
     </section>
-  </div>
+  </main>
 </body>
 </html>
