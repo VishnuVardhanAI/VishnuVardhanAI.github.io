@@ -131,6 +131,8 @@
       color: #111827;
     }
 
+    .section p + p { margin-top: 0.75rem; }
+
     /* -------- Work Experience -------- */
     .experience-role {
       font-weight: 600;
@@ -207,7 +209,7 @@
     <header class="hero">
       <h1 class="hero-title">Vishnu Vardhan Manivannan</h1>
       <div class="hero-subtitle">
-        Go · Docker · Distributed Systems · Microservices · PostgreSQL
+        Backend Engineer · Go · Distributed Systems · AWS · Cloud-Native Systems
       </div>
 
       <div class="hero-links">
@@ -251,23 +253,49 @@
     <section class="section">
       <h2 class="section-title">About</h2>
       <p>
-        I’m a Software Engineer focused on backend development, distributed systems, and
-        cloud-native architecture. I work with technologies such as Go, gRPC, PostgreSQL,
-        NATS, Redis, Docker, and observability tooling to build reliable and maintainable
-        backend services.
+        I’m a backend-focused software engineer with experience building distributed systems
+        and cloud-native services. I enjoy working close to real production systems and care
+        deeply about reliability, performance, and clear system design.
+      </p>
+      <p>
+        My core experience is in Go-based backend development using gRPC, PostgreSQL, Docker,
+        and messaging systems like NATS and RabbitMQ. I’ve worked on authentication flows,
+        asynchronous processing, observability, and performance optimization in production
+        environments.
       </p>
     </section>
 
     <!-- Work Experience -->
     <section class="section">
       <h2 class="section-title">Work Experience</h2>
+
       <div class="experience">
+        <div class="experience-role">
+          Volunteer Software Engineer · Saayam For All (Non-Profit Platform)
+        </div>
+        <div class="experience-meta">May 2025 – Present</div>
+        <p>
+          Contributing to backend systems deployed on AWS, implementing user-facing features
+          and working within existing ECS-based deployments, IAM configurations, and
+          CloudWatch-based monitoring.
+        </p>
+      </div>
+
+      <div class="experience" style="margin-top: 1.1rem;">
         <div class="experience-role">
           Software Development Engineer · HipBar (India)
         </div>
         <div class="experience-meta">Jun 2019 – Dec 2021</div>
         <p>
-          At HipBar (an e-commerce startup), I took ownership of several production-critical backend systems. I led the design and development of a new in-house promotion engine that removed a costly third-party dependency, saving the company 72% of it's revenue. I migrated major Python-based services to Go, boosted authentication performance using Redis caching, and designed distributed worker systems using NATS and RabbitMQ to process platform events reliably at scale. I strengthened system reliability by adding meaningful test coverage and enhancing observability with Jaeger, OpenTracing, and Sentry. This role gave me hands-on experience owning backend components, improving system performance, and working with real production traffic in a fast-paced startup environment.        </p>
+          At HipBar (an e-commerce startup), I took ownership of several production-critical backend systems.
+          I led the design and development of a new in-house promotion engine that replaced a costly
+          third-party dependency, reducing revenue expenditure by 72%. I migrated major Python-based services
+          to Go, boosted authentication performance using Redis caching, and designed distributed worker systems
+          using NATS and RabbitMQ to process platform events reliably at scale. I strengthened system reliability
+          by adding meaningful test coverage and enhancing observability with Jaeger, OpenTracing, and Sentry.
+          This role gave me hands-on experience owning backend components, improving system performance, and working
+          with real production traffic in a fast-paced startup environment.
+        </p>
       </div>
     </section>
 
@@ -288,35 +316,6 @@
           processing, and automatic cleanup of deleted files.
         </p>
       </div>
-
-      <div class="project">
-        <div class="project-title">
-          <a href="https://github.com/VishnuVardhanAI/Wikipedia-Web-Traffic-Forecasting">
-            Wikipedia Web Traffic Forecasting
-          </a>
-        </div>
-        <div class="project-meta">Python · ARIMA · LSTM · Time Series</div>
-        <p>
-          Forecasting Wikipedia traffic with a hybrid SARIMA–LSTM ensemble, with
-          large-scale preprocessing and evaluation using RMSE/SMAPE for smarter
-          capacity planning.
-        </p>
-      </div>
-
-      <div class="project">
-        <div class="project-title">
-          <a
-            href="https://github.com/VishnuVardhanAI/E-Commerce-Website--Olist.com--Customer-Segmentation"
-          >
-            E-commerce Website (Olist.com) Customer Segmentation
-          </a>
-        </div>
-        <div class="project-meta">Python · Clustering · Customer Analytics</div>
-        <p>
-          Customer segmentation for an e-commerce platform using behavioral features,
-          cohort-style metrics, and clustering to identify high-value segments.
-        </p>
-      </div>
     </section>
 
     <!-- Tech -->
@@ -325,6 +324,7 @@
       <div class="pill-row">
         <span class="pill">Go</span>
         <span class="pill">gRPC</span>
+        <span class="pill">AWS</span>
         <span class="pill">NATS</span>
         <span class="pill">RabbitMQ</span>
         <span class="pill">PostgreSQL</span>
